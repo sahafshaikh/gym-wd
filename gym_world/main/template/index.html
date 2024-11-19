@@ -1,0 +1,311 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym World</title>
+    <link rel="stylesheet" href="{% static 'website/styles.css' %}">
+</head>
+<body>
+    <!-- Copy the entire body content from the provided HTML file -->
+    <nav>
+        <div class="logo">GYM WORLD</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#store">Store</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+            <a href="#" id="loginBtn">Login</a>
+            <a href="#" id="adminBtn">Admin</a>
+            <div class="cart-icon" id="cartIcon">
+                🛒
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="cart-menu" id="cartMenu">
+        <span class="close-cart" id="closeCart">&times;</span>
+        <h2>Your Cart</h2>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-total" id="cartTotal">Total: $0.00</div>
+        <button class="btn" id="checkoutBtn">Proceed to Checkout</button>
+    </div>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>WELCOME<br>TO GYM<br>WORLD</h1>
+            <a href="#" class="btn" id="registerNowBtn">Register Now</a>
+        </div>
+    </section>
+
+    <section class="pricing-plans" id="pricing">
+        <h2>GYM PLANS</h2>
+        <div class="plan-grid" id="planGrid"></div>
+    </section>
+
+    <section class="training-grid">
+        <div class="training-card">
+            <img src="https://images.pexels.com/photos/1431282/pexels-photo-1431282.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Training">
+            <div class="training-content">
+                <h3>TRAINING</h3>
+                <p>If you think lifting is dangerous, being weak is worse.</p>
+                <a href="#" class="btn view-courses">View Courses</a>
+            </div>
+        </div>
+        <div class="training-card">
+            <img src="https://images.pexels.com/photos/1552106/pexels-photo-1552106.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Training">
+            <div class="training-content">
+                <h3>TRAINING</h3>
+                <p>Achieve the best results with our fitness programs.</p>
+                <a href="#" class="btn view-courses">View Courses</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <h2>WHAT WE OFFER</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="https://images.pexels.com/photos/3763868/pexels-photo-3763868.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cardio">
+                <h3>CARDIO</h3>
+                <p>Transform your body and mind.</p>
+            </div>
+            <div class="service-card">
+                <img src="https://images.pexels.com/photos/18060235/pexels-photo-18060235/free-photo-of-bdybuilder-exercising-in-black-and-white.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Muscle Gain">
+                <h3>MUSCLE GAIN</h3>
+                <p>Build strength and confidence.</p>
+            </div>
+            <div class="service-card">
+                <img src="https://images.pexels.com/photos/1748447/pexels-photo-1748447.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Weight Loss">
+                <h3>WEIGHT LOSS</h3>
+                <p>Achieve your fitness goals.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="store" id="store">
+        <h2>GYM STORE</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/16216617/pexels-photo-16216617/free-photo-of-man-and-jar-midair.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Protein Powder">
+                <h3>Whey Protein Powder</h3>
+                <p>High-quality protein for muscle recovery and growth</p>
+                <p class="price">$29.99</p>
+                <button class="btn add-to-cart" data-id="1" data-name="Whey Protein Powder" data-price="29.99">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/6339605/pexels-photo-6339605.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Resistance Bands">
+                <h3>Resistance Bands Set</h3>
+                <p>Versatile equipment for strength training at home</p>
+                <p class="price">$19.99</p>
+                <button class="btn add-to-cart" data-id="2" data-name="Resistance Bands Set" data-price="19.99">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/23109978/pexels-photo-23109978/free-photo-of-man-wearing-boxing-gloves-flexing-his-biceps.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Gym Gloves">
+                <h3>Workout Gloves</h3>
+                <p>Protect your hands during intense workouts</p>
+                <p class="price">$14.99</p>
+                <button class="btn add-to-cart" data-id="3" data-name="Workout Gloves" data-price="14.99">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/6551132/pexels-photo-6551132.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Shaker Bottle">
+                <h3>Protein Shaker Bottle</h3>
+                <p>Convenient mixing for your protein shakes</p>
+                <p class="price">$9.99</p>
+                <button class="btn add-to-cart" data-id="4" data-name="Protein Shaker Bottle" data-price="9.99">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <img src="/placeholder.svg?height=300&width=300" alt="About Us">
+        <div class="about-content">
+            <h2>ABOUT US</h2>
+            <p>We offer the best gym training and the gym program to which you would look for the endless exercising era. Also the program comes with all possible training and work out.</p>
+            <a href="#" class="btn view-courses">My Courses</a>
+        </div>
+    </section>
+
+    <section class="gallery" id="gallery">
+        <h2>OUR GALLERY</h2>
+        <div class="gallery-grid">
+            <img src="https://images.pexels.com/photos/1748447/pexels-photo-1748447.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Gym Interior">
+            <img src="https://images.pexels.com/photos/2261477/pexels-photo-2261477.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Weight Training">
+            <img src="https://images.pexels.com/photos/4761779/pexels-photo-4761779.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cardio Area">
+            <img src="https://images.pexels.com/photos/4752861/pexels-photo-4752861.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Yoga Class">
+            <img src="https://images.pexels.com/photos/1552102/pexels-photo-1552102.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Personal Training">
+            <img src="https://images.pexels.com/photos/2468339/pexels-photo-2468339.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Locker Room">
+        </div>
+    </section>
+
+    <section class="contact-us" id="contact">
+        <h2>Contact Us</h2>
+        <form class="contact-form" id="contactForm">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="contact-grid">
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <h4>Location</h4>
+                    <p>123 Gym Street, Fitnessville</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <div>
+                    <h4>Phone</h4>
+                    <p>+1 234 567 890</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <h4>Email</h4>
+                    <p>info@gymworld.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email:</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password:</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Login" class="btn">
+                </div>
+            </form>
+            <div class="switch-form">
+                <p>Don't have an account? <a href="#" id="switchToRegister">Register</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Register</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="registerName">Name:</label>
+                    <input type="text" id="registerName" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email:</label>
+                    <input type="email" id="registerEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Password:</label>
+                    <input type="password" id="registerPassword" required>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Register" class="btn">
+                </div>
+            </form>
+            <div class="switch-form">
+                <p>Already have an account? <a href="#" id="switchToLogin">Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="adminLoginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Admin Login</h2>
+            <form id="adminLoginForm">
+                <div class="form-group">
+                    <label for="adminEmail">Email:</label>
+                    <input type="email" id="adminEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="adminPassword">Password:</label>
+                    <input type="password" id="adminPassword" required>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Login" class="btn">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="checkoutModal" class="checkout-modal">
+        <div class="checkout-content">
+            <span class="close">&times;</span>
+            <h2>Checkout</h2>
+            <form id="checkoutForm">
+                <div class="form-group">
+                    <label for="checkoutName">Name:</label>
+                    <input type="text" id="checkoutName" required>
+                </div>
+                <div class="form-group">
+                    <label for="checkoutEmail">Email:</label>
+                    <input type="email" id="checkoutEmail" required>
+                </div>
+                <div class="payment-options">
+                    <div class="payment-option">
+                        <img src="/placeholder.svg?height=50&width=50" alt="Credit Card">
+                        <span>Credit Card</span>
+                    </div>
+                    <div class="payment-option">
+                        <img src="/placeholder.svg?height=50&width=50" alt="PayPal">
+                        <span>PayPal</span>
+                    </div>
+                    <div class="payment-option">
+                        <img src="/placeholder.svg?height=50&width=50" alt="UPI">
+                        <span>UPI</span>
+                    </div>
+                </div>
+                <div class="qr-code">
+                    <img src="/placeholder.svg?height=200&width=200" alt="QR Code">
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Complete Purchase" class="btn">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Replace all instances of "/placeholder.svg" with "{% static 'website/images/placeholder.svg' %}" -->
+    <!-- Replace "admin.html" with "{% url 'admin_panel' %}" -->
+
+    <script src="{% static 'website/script.js' %}"></script>
+</body>
+</html>
